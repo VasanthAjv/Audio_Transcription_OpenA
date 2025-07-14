@@ -13,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class OpenAiService {
+	
+	
 
 	private final OpenAIClient openAIClient;
 	public String openAiResponse(String prompt)
