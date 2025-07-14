@@ -3,9 +3,10 @@ package com.example.audio_transcribe.service;
 import org.springframework.stereotype.Service;
 
 import com.openai.client.OpenAIClient;
-import com.openai.models.ChatCompletion;
-import com.openai.models.ChatCompletionCreateParams;
+
 import com.openai.models.ChatModel;
+import com.openai.models.chat.completions.ChatCompletion;
+import com.openai.models.chat.completions.ChatCompletionCreateParams;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,7 +19,7 @@ public class OpenAiService {
 	{
 
 ChatCompletionCreateParams params = ChatCompletionCreateParams.builder()
-    .addUserMessage("Say this is a test")
+    .addUserMessage(prompt)
     .model(ChatModel.GPT_4O_MINI)
     .build();
 ChatCompletion chatCompletion = openAIClient.chat().completions().create(params);
